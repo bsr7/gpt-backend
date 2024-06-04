@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
 import OpenAI from "openai";
+import cors from "cors";
 
 dotenv.config(); // Load the .env file
 
@@ -10,6 +11,7 @@ const port = 5001;
 
 // use middleware to parse json request bodies
 app.use(bodyParser.json());
+app.use(cors());
 
 const openai = new OpenAI({
 	apiKey: process.env.OPENAI_API_KEY,
