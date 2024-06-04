@@ -34,6 +34,7 @@ app.post("/chat", async (req, res) => {
 			model: model,
 			messages: messages,
 		});
+		console.log("Hit backend successfully");
 		res.status(200).json(response.choices[0].message);
 	} catch (error) {
 		console.error("Error fetching response: ", error);
